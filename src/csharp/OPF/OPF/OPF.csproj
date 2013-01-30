@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{85AB5104-EF7A-459B-B13D-AA53078108CD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OPF</RootNamespace>
+    <AssemblyName>OPF</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Specification\Content.cs" />
+    <Compile Include="Specification\DocAuthor.cs" />
+    <Compile Include="Specification\DocTitle.cs" />
+    <Compile Include="Specification\EPUBFormat.cs" />
+    <Compile Include="Specification\Guide.cs" />
+    <Compile Include="Specification\IContainerStandard.cs" />
+    <Compile Include="Specification\IContentMarkupStandard.cs" />
+    <Compile Include="Specification\IPackagingStandard.cs" />
+    <Compile Include="Specification\Item.cs" />
+    <Compile Include="Specification\ItemRef .cs" />
+    <Compile Include="Specification\Manifest.cs" />
+    <Compile Include="Specification\Meta.cs" />
+    <Compile Include="Specification\Metadata.cs" />
+    <Compile Include="Specification\NavigationCentereXtended.cs" />
+    <Compile Include="Specification\NavLabel.cs" />
+    <Compile Include="Specification\NavList.cs" />
+    <Compile Include="Specification\NavMap.cs" />
+    <Compile Include="Specification\NavPoint.cs" />
+    <Compile Include="Specification\NavTarget.cs" />
+    <Compile Include="Specification\NcxHead.cs" />
+    <Compile Include="Specification\OpenPackagingFormat.cs" />
+    <Compile Include="Specification\OpenPublicationStructure.cs" />
+    <Compile Include="Specification\OpfDocument2_0_1.cs" />
+    <Compile Include="Specification\Package.cs" />
+    <Compile Include="Specification\PageList.cs" />
+    <Compile Include="Specification\PageTarget.cs" />
+    <Compile Include="Specification\Reference.cs" />
+    <Compile Include="Specification\Spine.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
