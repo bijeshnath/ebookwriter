@@ -21,8 +21,9 @@
 
 
         <TextBlock VerticalAlignment="Top" Grid.Column="0" Grid.Row="1" >Ncx:</TextBlock>
+            
             <TextBox BorderBrush="DarkBlue" BorderThickness="1.5"  Grid.Column="1" Grid.Row="1"  Name="txtNcx"></TextBox>
-
+            
 
 
         <TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="2">ncx file:</TextBlock>
