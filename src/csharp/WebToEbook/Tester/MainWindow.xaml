@@ -2,9 +2,15 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525" SizeToContent="WidthAndHeight">
-    <Grid>
+
         <StackPanel>
-            <Button Click="Button_Click" Height="Auto" >Go</Button>
+            <TextBlock>url</TextBlock>
+            <TextBox Name="txtUrl">http://en.wikipedia.org/</TextBox>
+            <TextBlock>Create in:</TextBlock>
+            <TextBox Name="txtOutputDir">C:\Users\Home\Documents\Reader\</TextBox>
+        <TextBlock>Create file with name:</TextBlock>
+        <TextBox Name="txtOutputFile">1</TextBox>
+        <Button Click="Button_Click" Height="Auto" >Go</Button>
         </StackPanel>
-    </Grid>
+ 
 </Window>
