@@ -1,11 +1,18 @@
 ﻿<Window x:Class="NaicXe.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="500" MinHeight="450" Width="525" SizeToContent="Height">
+    <Window.CommandBindings>
+        <CommandBinding Command="Open" CanExecute="OpenCommandBinding_CanExecute" Executed="OpenCommandBinding_Executed"/>
+        <CommandBinding Command="SaveAs" CanExecute="SaveAsCommandBinding_CanExecute" Executed="SaveAsCommandBinding_Executed"/>
+    </Window.CommandBindings>
     <DockPanel>
         <StackPanel DockPanel.Dock="Top">
             <Menu DockPanel.Dock="Top">
-                <MenuItem Header="File"/>
+                <MenuItem Header="File">
+                    <MenuItem Header="{Binding RelativeSource={RelativeSource Self}, Path=Command.Text}" Command="Open"/>
+                    <MenuItem Header="{Binding RelativeSource={RelativeSource Self}, Path=Command.Text}" Command="SaveAs"/>
+                </MenuItem>
                 <MenuItem Header="Edit"/>
                 <MenuItem Header="View"/>
                 <MenuItem Header="Tools"/>
@@ -14,17 +21,83 @@
                 <MenuItem Header="Help"/>
             </Menu>
         </StackPanel>
-        <StackPanel Name="buttonBar" Orientation="Horizontal" DockPanel.Dock="Right">
+        <StackPanel Name="leftButtonBar" Orientation="Horizontal" DockPanel.Dock="Left">
             <StackPanel.LayoutTransform>
                 <RotateTransform Angle="90"/>
             </StackPanel.LayoutTransform>
             <Button Name="pane1Button" MouseEnter="pane1Button_MouseEnter">
                 Toolbox
             </Button>
+
+        </StackPanel>
+        <StackPanel Name="buttonBar" Orientation="Horizontal" DockPanel.Dock="Right">
+            <StackPanel.LayoutTransform>
+                <RotateTransform Angle="90"/>
+            </StackPanel.LayoutTransform>
             <Button Name="pane2Button" MouseEnter="pane2Button_MouseEnter">
                 Solution Explorer
             </Button>
         </StackPanel>
-        <Grid Name="parentGrid" Grid.IsSharedSizeScope="True"></Grid>
+        <TabControl>
+            <TabItem Header="Meta Data">
+        <Grid Name="parentGrid" Grid.IsSharedSizeScope="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"  />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+            </Grid.RowDefinitions>
+            <!-- this works: -->
+            <!-- Text="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=ThePackage.myMetadata.title}"-->
+            <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right"  Name="txtBlockTitle" Margin="0,0,10,0">Title</TextBlock>
+            <TextBox Grid.Column="1" Grid.Row="0" Name="txtTitle" Margin="10,2,10,2" Text="{Binding Path=ThePackage.myMetadata.title}" ></TextBox>
+            <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Name="txtBlockCreator" Margin="0,0,10,0">Creator</TextBlock>
+            <TextBox Grid.Column="1" Grid.Row="1" Name="txtCreator" Text="{Binding Path=ThePackage.myMetadata.creator}" Margin="10,2,10,2"></TextBox>
+            <TextBlock Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" Name="txtBlockDescription" Margin="0,0,10,0">Description</TextBlock>
+            <TextBox Grid.Column="1" Grid.Row="2" Name="txtDescription" Text="{Binding Path=ThePackage.myMetadata.description}" Margin="10,2,10,2"></TextBox>
+            <TextBlock Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" Name="txtBlockPublisher" Margin="0,0,10,0">Publisher</TextBlock>
+            <TextBox Grid.Column="1" Grid.Row="3" Name="txtPublisher" Text="{Binding Path=ThePackage.myMetadata.publisher}" Margin="10,2,10,2"></TextBox>
+            <TextBlock Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right" Name="txtBlockContributor" Margin="0,0,10,0">Contributor</TextBlock>
+            <TextBox Grid.Column="1" Grid.Row="4" Name="txtContributor" Text="{Binding Path=ThePackage.myMetadata.contributor}" Margin="10,2,10,2"></TextBox>
+            <TextBlock Grid.Column="0" Grid.Row="5" HorizontalAlignment="Right" Name="txtBlockDate" Margin="0,0,10,0">Date</TextBlock>
+            <TextBox Grid.Column="1" Grid.Row="5" Name="txtDate" Text="{Binding Path=ThePackage.myMetadata.date}" Margin="10,2,10,2"></TextBox>
+            <TextBlock Grid.Column="0" Grid.Row="6" HorizontalAlignment="Right" Name="txtBlockType" Margin="0,0,10,0">Type</TextBlock>
+            <TextBox Grid.Column="1" Grid.Row="6" Name="txtType" Text="{Binding Path=ThePackage.myMetadata.type}" Margin="10,2,10,2"></TextBox>
+            <TextBlock Grid.Column="0" Grid.Row="7" HorizontalAlignment="Right" Name="txtBlockFormat" Margin="0,0,10,0">Format</TextBlock>
+            <TextBox Grid.Column="1" Grid.Row="7" Name="txtFormat" Text="{Binding Path=ThePackage.myMetadata.format}" Margin="10,2,10,2"></TextBox>
+            <TextBlock Grid.Column="0" Grid.Row="8" HorizontalAlignment="Right" Name="txtBlockIdentifier" Margin="0,0,10,0">Identifier</TextBlock>
+            <TextBox Grid.Column="1" Grid.Row="8" Name="txtIdentifier" Text="{Binding Path=ThePackage.myMetadata.identifier}" Margin="10,2,10,2"></TextBox>
+            <TextBlock Grid.Column="0" Grid.Row="9" HorizontalAlignment="Right" Name="txtBlockSource" Margin="0,0,10,0">Source</TextBlock>
+            <TextBox Grid.Column="1" Grid.Row="9" Name="txtSource" Text="{Binding Path=ThePackage.myMetadata.source}" Margin="10,2,10,2"></TextBox>
+            <TextBlock Grid.Column="0" Grid.Row="10" HorizontalAlignment="Right" Name="txtBlockLanguage" Margin="0,0,10,0">Language</TextBlock>
+            <TextBox Grid.Column="1" Grid.Row="10" Name="txtLanguage" Text="{Binding Path=ThePackage.myMetadata.language}" Margin="10,2,10,2"></TextBox>
+            <TextBlock Grid.Column="0" Grid.Row="11" HorizontalAlignment="Right" Name="txtBlockRelation" Margin="0,0,10,0">Relation</TextBlock>
+            <TextBox Grid.Column="1" Grid.Row="11" Name="txtRelation" Text="{Binding Path=ThePackage.myMetadata.relation}" Margin="10,2,10,2"></TextBox>
+            <TextBlock Grid.Column="0" Grid.Row="12" HorizontalAlignment="Right" Name="txtBlockCoverage" Margin="0,0,10,0">Coverage</TextBlock>
+            <TextBox Grid.Column="1" Grid.Row="12" Name="txtCoverage" Text="{Binding Path=ThePackage.myMetadata.coverage}" Margin="10,2,10,2"></TextBox>
+            <TextBlock Grid.Column="0" Grid.Row="13" HorizontalAlignment="Right" Name="txtBlockRights" Margin="0,0,10,0">Rights</TextBlock>
+            <TextBox Grid.Column="1" Grid.Row="13" Name="txtRights" Text="{Binding Path=ThePackage.myMetadata.rights}" Margin="10,2,10,2"></TextBox>        
+        </Grid>
+            </TabItem>
+            <TabItem Header="Manifest">
+                <ListBox Name="lstManifestItems" ItemsSource="{Binding Path=ThePackage.myManifest.myItems}"></ListBox>
+                
+            </TabItem>
+        </TabControl>
+
     </DockPanel>
 </Window>

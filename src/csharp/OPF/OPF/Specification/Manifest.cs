@@ -29,7 +29,11 @@ public class Manifest
      @element-type Item
      */
     [XmlElement("item")]
-    public List<Item>  myItems;
+    public List<Item> myItems
+    {
+        get;
+        set;
+    }
 
 
     public void AddItem(Item arg)

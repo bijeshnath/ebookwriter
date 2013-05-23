@@ -16,5 +16,5 @@ public class OpfDocument2_0_1 : OpenPackagingFormat
 
     /// <summary> 
     /// </summary>
-    public Package myPackage;
+    public Package myPackage { get; set; }
 } /* end class OpfDocument2_0_1 */

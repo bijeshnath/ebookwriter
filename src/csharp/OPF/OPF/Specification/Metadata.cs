@@ -21,37 +21,97 @@ public class Metadata
 
     // Attributes
     [XmlElement(ElementName = "title", Namespace = "http://purl.org/dc/elements/1.1/")]
-    public String title;
+    public String title
+    {
+        get;
+        set;
+    }
 
     [XmlElement(ElementName = "creator", Namespace = "http://purl.org/dc/elements/1.1/")]
-    public String creator;
+    public String creator
+    {
+        get;
+        set;
+    }
 
     [XmlElement(ElementName = "language", Namespace = "http://purl.org/dc/elements/1.1/")]
-    public String language;
+    public String language
+    {
+        get;
+        set;
+    }
     [XmlElement(ElementName = "subject", Namespace = "http://purl.org/dc/elements/1.1/")]
-    public String subject;
+    public String subject
+    {
+        get;
+        set;
+    }
     [XmlElement(ElementName = "description", Namespace = "http://purl.org/dc/elements/1.1/")]
-    public String description;
+    public String description
+    {
+        get;
+        set;
+    }
     [XmlElement(ElementName = "publisher", Namespace = "http://purl.org/dc/elements/1.1/")]
-    public String publisher;
+    public String publisher
+    {
+        get;
+        set;
+    }
     [XmlElement(ElementName = "contributor", Namespace = "http://purl.org/dc/elements/1.1/")]
-    public String contributor;
+    public String contributor
+    {
+        get;
+        set;
+    }
     [XmlElement(ElementName = "date", Namespace = "http://purl.org/dc/elements/1.1/")]
-    public DateTime date;
+    public DateTime date
+    {
+        get;
+        set;
+    }
     [XmlElement(ElementName = "type", Namespace = "http://purl.org/dc/elements/1.1/")]
-    public String type;
+    public String type
+    {
+        get;
+        set;
+    }
     [XmlElement(ElementName = "format", Namespace = "http://purl.org/dc/elements/1.1/")]
-    public String format;
+    public String format
+    {
+        get;
+        set;
+    }
     [XmlElement(ElementName = "identifier", Namespace = "http://purl.org/dc/elements/1.1/")]
-    public String identifier;
+    public String identifier
+    {
+        get;
+        set;
+    }
     [XmlElement(ElementName = "source", Namespace = "http://purl.org/dc/elements/1.1/")]
-    public String source;
+    public String source
+    {
+        get;
+        set;
+    }
     [XmlElement(ElementName = "relation", Namespace = "http://purl.org/dc/elements/1.1/")]
-    public String relation;
+    public String relation
+    {
+        get;
+        set;
+    }
     [XmlElement(ElementName = "coverage", Namespace = "http://purl.org/dc/elements/1.1/")]
-    public String coverage;
+    public String coverage
+    {
+        get;
+        set;
+    }
     [XmlElement(ElementName = "rights", Namespace = "http://purl.org/dc/elements/1.1/")]
-    public String rights;
+    public String rights
+    {
+        get;
+        set;
+    }
     // Associations
 
     /// <summary> 

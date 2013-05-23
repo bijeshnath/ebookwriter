@@ -11,6 +11,7 @@
     ///  @author Bijeshnath R
      /// </summary>
 using System;
+using System.ComponentModel;
 using System.Xml.Serialization;
 
 [XmlRoot(ElementName="package", Namespace="http://www.idpf.org/2007/opf"), Serializable]
@@ -31,19 +32,37 @@ public class Package
     /// <summary> 
     /// </summary>
     [XmlElement("metadata")]
-    public Metadata myMetadata;
+    public Metadata myMetadata
+    {
+        get;
+        set;
+    }
 
     /// <summary> 
     /// </summary>
     [XmlElement("manifest")]
-    public Manifest myManifest;
+    public Manifest myManifest
+    {
+        get;
+        set;
+    }
 
     /// <summary> 
     [XmlElement("spine")]
-    public Spine mySpine;
+    public Spine mySpine
+    {
+        get;
+        set;
+    }
 
     /// <summary> 
     /// </summary>
     [XmlElement("guide")]
-    public Guide myGuide;
+    public Guide myGuide
+    {
+        get;
+        set;
+    }
+
+
 } /* end class Package */

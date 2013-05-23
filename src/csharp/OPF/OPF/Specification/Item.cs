@@ -25,11 +25,20 @@ public class Item
     public Item()
     {
     }
+
+    public override string ToString()
+    {
+        return id + href + media_type + fallBack;
+    }
     // Attributes
     [XmlAttribute(AttributeName = "id")]
     public String id;
     [XmlAttribute(AttributeName = "href")]
-    public String href;
+    public String href
+    {
+        get;
+        set;
+    }
     [XmlAttribute(AttributeName = "media_type")]
     public String media_type;
     [XmlAttribute(AttributeName = "fallBack")]
